@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Paso 1</title>
+    <script src="js/main.js"></script>
 </head>
 <body>
-    
+    <form action="" id="form_primer_paso">
+        <label for="tipo_documento">Tipo de Documento</label>
+        <select name="tipo_documento" id="tipo_documento">
+            <option value="dni">DNI</option>
+            <option value="lc">LC</option>
+            <option value="le">LE</option>
+            <option value="cuil">CUIL</option>
+            <option value="cuit">CUIT</option>
+        </select>
+        <label for="nro_documento">Numero de Documento</label>
+        <input type="number" name="nro_documento" id="nro_documento">
+        <label for="puesto">Puesto solicitado</label>
+        <select name="puesto" id="puesto">
+            <option value="recepcionista">Recepcionista</option>
+            <option value="vendedor">Vendedor</option>
+            <option value="control_calidad">Control de Calidad</option>
+            <option value="repositor">Repositor</option>
+            <option value="manenimiento">Mantenimiento Tecnico</option>
+        </select>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre">
+        <label for="apellido">apellido</label>
+        <input type="text" name="apellido" id="apellido">
+        <label for="email">Correo Electronico</label>
+        <input type="text" name="email" placeholder="email" id="email">
+        <label for="fnac">Fecha de Nacimiento</label>
+        <input type="date" name="fnac" id="fnac">
+        <input type="submit" value="ENVIAR" id="btn_enviar">
+    </form>
 </body>
 </html>
