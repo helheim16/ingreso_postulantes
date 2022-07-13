@@ -43,13 +43,13 @@ window.onload = () => {
     });
 
 
-    let init_peticion = {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-    };
+    // let init_peticion = {
+    //     method: 'GET',
+    //     headers: {
+    //         'Accept': 'application/json',
+    //         'Content-Type': 'application/json'
+    //     }
+    // };
 
     // Consulta si existe un postulante con ese tipo y documento, de se asi llena el formulario
     function consultarExistencia(){
@@ -72,6 +72,8 @@ window.onload = () => {
         .then(guardar)
         .then(mostrar)
         .catch(error);
+        
+        siguientePaso();
     }
 
     function recuperar(rta){
@@ -128,15 +130,8 @@ window.onload = () => {
         return completos;
     }
 
-    // function pokeAPI(){
-    //     fetch('https://pokeapi.co/api/v2/pokemon/ditto')
-    //     .then(res => {
-    //         if (res.ok) {
-    //             console.log('EXITO');
-    //             console.log(res.json());
-    //         } else {
-    //             console.log('NO TANTO EXITO');
-    //         }
-    //     })
-    // }
+    function siguientePaso(){
+        alert('El envio de los datos fue exitoso. Sera redirigido al siguiente paso.')
+        window.location = "paso_3.html";
+    }
 }
