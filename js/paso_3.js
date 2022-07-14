@@ -1,6 +1,7 @@
 window.onload = () => {
+    const CONTENEDOR = document.querySelector('.contenedor');
     const DROP_AREA = document.querySelector('#drop_area');
-    const DROP_TEXTO = DROP_AREA.querySelector('h2');
+    const DROP_TEXTO = DROP_AREA.querySelector('h5');
     const DROP_BTN = DROP_AREA.querySelector('button');
     const INPUT_FILE = document.querySelector('#input_file');
     let pdf;
@@ -24,18 +25,25 @@ window.onload = () => {
         e.preventDefault();
         e.stopPropagation();
         DROP_TEXTO.textContent = 'Suelte para cargar el archivo';
+        CONTENEDOR.classList.remove('bg-light');
+        CONTENEDOR.classList.add('bg-danger');
     });
 
     DROP_AREA.addEventListener('dragleave', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        DROP_TEXTO.textContent = 'Arrastre y suelte su foto de perfil';
+        DROP_TEXTO.textContent = 'Arrastre y suelte su curriculum';
+        CONTENEDOR.classList.add('bg-light');
+        CONTENEDOR.classList.remove('bg-danger');
     });
 
     DROP_AREA.addEventListener('drop', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        DROP_TEXTO.textContent = 'Arrastre y suelte su foto de perfil';
+        DROP_TEXTO.textContent = 'Arrastre y suelte su curriculum';
+        CONTENEDOR.classList.add('bg-light');
+        CONTENEDOR.classList.remove('bg-danger');
+        
         pdf = e.dataTransfer.files[0];
         if(pdf !== undefined){
             procesarArchivo(pdf);

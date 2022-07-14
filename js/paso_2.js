@@ -1,6 +1,7 @@
 window.onload = () => {
+    const CONTENEDOR = document.querySelector('.contenedor');
     const DROP_AREA = document.querySelector('#drop_area');
-    const DROP_TEXTO = DROP_AREA.querySelector('h2');
+    const DROP_TEXTO = DROP_AREA.querySelector('h5');
     const DROP_BTN = DROP_AREA.querySelector('button');
     const INPUT_FILE = document.querySelector('#input_file');
     let imagen;
@@ -24,18 +25,25 @@ window.onload = () => {
         e.preventDefault();
         e.stopPropagation();
         DROP_TEXTO.textContent = 'Suelte para cargar el archivo';
+        CONTENEDOR.classList.remove('bg-light');
+        CONTENEDOR.classList.add('bg-danger');
     });
 
     DROP_AREA.addEventListener('dragleave', (e) => {
         e.preventDefault();
         e.stopPropagation();
         DROP_TEXTO.textContent = 'Arrastre y suelte su foto de perfil';
+        CONTENEDOR.classList.add('bg-light');
+        CONTENEDOR.classList.remove('bg-danger');
     });
 
     DROP_AREA.addEventListener('drop', (e) => {
         e.preventDefault();
         e.stopPropagation();
         DROP_TEXTO.textContent = 'Arrastre y suelte su foto de perfil';
+        CONTENEDOR.classList.add('bg-light');
+        CONTENEDOR.classList.remove('bg-danger');
+        
         imagen = e.dataTransfer.files[0];
         console.log(imagen);
         if(imagen !== undefined){
@@ -64,7 +72,6 @@ window.onload = () => {
             */
 
             let formData = new FormData();
-            // formData.append('tipo_documento', localStorage.getItem('tipo_documento'));
             formData.append('nro_documento', localStorage.getItem('nro_documento'));
             formData.append('tipo', tipoArchivo);
             formData.append('imagen', archivo);

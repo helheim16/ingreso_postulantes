@@ -6,13 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paso 3</title>
     <script src="js/paso_3.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
-<body>
-    <div id="drop_area">
-        <h2>Arrastre y suelte su curriculum</h2>
-        <span>o</span>
-        <button>Seleccione su CV</button>
-        <input type="file" name="" id="input_file" hidden>
+<body class="bg-secondary">
+    <nav class="navbar bg-dark navbar-dark">
+        <div class="container">
+            <a href="#" class="navbar-brand ">Tercer Paso</a>
+        </div>
+    </nav>
+    <div class="container-sm my-4 py-4 bg-light border-0 rounded contenedor">
+        <div id="drop_area">
+            <div class="col-md-12 text-center">
+                <h5>Arrastre y suelte su curriculum</h2>
+            </div>
+            <div class="col-md-12 text-center">
+                <button class="btn btn-success mt-3 px-4 py-2">Seleccione su CV</button>
+            </div>
+            <input type="file" name="" id="input_file" hidden>
+        </div>
     </div>
 </body>
 </html>

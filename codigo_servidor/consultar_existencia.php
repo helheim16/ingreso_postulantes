@@ -1,6 +1,5 @@
 <?php 
 $jsondata = array();
-// $jsondata['exito'] = false;
 
 $json = file_get_contents('php://input');
 $data = json_decode($json);
@@ -39,19 +38,5 @@ $jsondata['ruta_archivo'] = $ruta.$nombreArchivo;
 $jsondata['mensajes'] = $mensajes;
 echo json_encode($jsondata);
 
-/*
-debe buscar archivo con tipo doc y nro doc igual al recibido 
-(puede ser por el nombre del archivo), si existe debe devolver
-los datos del archivo. Sino existe debera devolver un 
-mensaje de error 
-*/
-// Recibe los datos de tipo de documento
-// if (isset($_POST['nombre']) && !empty($_POST['nombre'])){
-//     $json = file_get_contents('php://input');
-//     $json = json_decode($json);
-    
-// }
-// Recibe los datos del numero de documento
-// Si existe la url con el tipo y nro de documento recibido envia los datos del archivo
 exit();
 ?>

@@ -42,15 +42,6 @@ window.onload = () => {
         }
     });
 
-
-    // let init_peticion = {
-    //     method: 'GET',
-    //     headers: {
-    //         'Accept': 'application/json',
-    //         'Content-Type': 'application/json'
-    //     }
-    // };
-
     // Consulta si existe un postulante con ese tipo y documento, de se asi llena el formulario
     function consultarExistencia(){
         init.body = JSON.stringify({tipo_doc: TIPO_DOC.options[TIPO_DOC.selectedIndex].text, nro_doc: NRO_DOC.value});
@@ -71,9 +62,8 @@ window.onload = () => {
         .then(recuperar)
         .then(guardar)
         .then(mostrar)
+        .then(siguientePaso)
         .catch(error);
-        
-        siguientePaso();
     }
 
     function recuperar(rta){
@@ -132,6 +122,6 @@ window.onload = () => {
 
     function siguientePaso(){
         alert('El envio de los datos fue exitoso. Sera redirigido al siguiente paso.')
-        window.location = "paso_3.html";
+        window.location = "paso_2.html";
     }
 }
